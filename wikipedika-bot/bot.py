@@ -3,13 +3,20 @@ import wikipedia
 
 from aiogram import Bot, Dispatcher, executor, types
 
+# Your API_TOKEN 
 API_TOKEN = '5900425147:AAF7YrwQ-6DIIPytnBfHvp7kiSgRYjXGyAY'
 
+# Configure logging
 logging.basicConfig(level=logging.INFO)
 
-wikipedia.set_lang('uz')
+# Initialize bot and dispatcher
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
+
+
+# Wikipedia setting language
+wikipedia.set_lang('uz')
+
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
